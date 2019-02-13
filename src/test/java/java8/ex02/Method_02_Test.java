@@ -18,9 +18,11 @@ public class Method_02_Test {
     interface IDao {
         List<Person> findAll();
 
-        // TODO créer une méthode String format()
-        // TODO la méthode retourne une chaîne de la forme [<nb_personnes> persons]
-        // TODO exemple de résultat : "[14 persons]", "[30 persons]"
+       default String format(){ 		// créer une méthode String format()
+    	   int nb_personnes = 0;
+    	   nb_personnes = findAll().size();
+    	  return ("[" + nb_personnes + " " + "persons" + "]"); // TODO la méthode retourne une chaîne de la forme [<nb_personnes> persons] 
+       }// TODO exemple de résultat : "[14 persons]", "[30 persons]"      
     }
     // end::IDao[]
 
